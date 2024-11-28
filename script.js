@@ -1,23 +1,30 @@
 let submit = document.querySelector("#submit");
 let activeContainer = document.querySelector(".container");
 let itemName = document.getElementById("name");
-let image = document.getElementById("choose-file").src;
+let image = document.getElementById("choose-file");
 let number = document.getElementById("number");
 let amount = document.getElementById("amount");
 let date = document.getElementById("date");
+let containContainer = document.getElementById("contain-container")
 
+console.log(image.value)
 submit.addEventListener("click", () => {
-    if(itemName.value.trim() !== ""){
+    console.log(image.value)
+    if(itemName.value.trim() !== "" || amount.value.trim() !== "" || number.value.trim() !== "" || date.value.trim() !== "" || itemName.value.trim() !== "" || itemName.value.trim() !== "" ){
         active()
         itemName.value = "";
+        amount.value = "";
+        date.value = "";
+        number.value = "";
+        image = "";
     }
 });
 
-const active = (e) => {
+const active = () => {
     let div = document.createElement("div");
     div.classList.add("container");
     let img = document.createElement("img");
-    img.src = image;
+    img.src = image.value;
     let paraOne = document.createElement("p");
     paraOne.setAttribute("id", "name-active");
     paraOne.innerText = itemName.value;
@@ -36,4 +43,5 @@ const active = (e) => {
     div.appendChild(paraTwo);
     div.appendChild(paraThree);
     div.appendChild(paraFour);
+    containContainer.appendChild(div);
 }

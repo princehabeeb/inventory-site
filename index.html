@@ -21,11 +21,11 @@
           <input class="img" type="file" id="choose-file" />
           <div class="sub-input">
             <input type="number" id="number" placeholder="Quantity" />
-            <input type="text" id="amount" placeholder="Amount">
+            <input type="text" id="amount" placeholder="Amount" />
           </div>
           <input type="date" id="date" />
         </div>
-        <input type="submit" id="submit" value="Submit" />
+        <input type="button" id="submit" value="Submit" />
       </form>
     </section>
     <section class="section-two">
@@ -36,7 +36,7 @@
         <p>Amount</p>
         <p>Date</p>
       </div>
-      <div class="contain-container">
+      <div class="contain-container" id="contain-container">
         <div class="container">
           <img src="image/food.jpg" alt="" />
           <p id="name-active">special food delicacy</p>
@@ -44,7 +44,7 @@
           <p id="amount-active">$2000.00</p>
           <p id="date-active">12|12|2012</p>
           <li class="edit" onclick="edit()">Edit</li>
-          <li class="delete" onclick="delet()">Delete</li> 
+          <li class="delete" onclick="delet()">Delete</li>
         </div>
         <div class="container">
           <img src="image/food.jpg" alt="" />
@@ -57,8 +57,6 @@
         </div>
       </div>
     </section>
-
-
 
     <script src="script.js"></script>
   </body>
