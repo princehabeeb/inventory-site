@@ -7,10 +7,9 @@ let amount = document.getElementById("amount");
 let date = document.getElementById("date");
 let containContainer = document.getElementById("contain-container")
 
-console.log(image.value)
+
 submit.addEventListener("click", () => {
-    console.log(image.value)
-    if(itemName.value.trim() !== "" || amount.value.trim() !== "" || number.value.trim() !== "" || date.value.trim() !== "" || itemName.value.trim() !== "" || itemName.value.trim() !== "" ){
+if(itemName.value.trim() !== "" && amount.value.trim() !== "" && number.value.trim() !== "" && date.value.trim() !== "" && itemName.value.trim() !== ""){
         active()
         itemName.value = "";
         amount.value = "";
@@ -37,11 +36,21 @@ const active = () => {
     let paraFour = document.createElement("p");
     paraFour.setAttribute("id", "date-active");
     paraFour.innerText = date.value;
+    let editItem = document.createElement("li");
+    editItem.classList.add("edit");
+    editItem.setAttribute("onclick", "edit");
+    editItem.innerText = "edit";
+    let deleteItem = document.createElement("li")
+    deleteItem.classList.add("delete");
+    deleteItem.setAttribute("onclick", "delete")
+    deleteItem.innerText = "delete";
 
     div.appendChild(img);
     div.appendChild(paraOne);
     div.appendChild(paraTwo);
     div.appendChild(paraThree);
     div.appendChild(paraFour);
+    div.appendChild(editItem)
+    div.appendChild(deleteItem)
     containContainer.appendChild(div);
 }
